@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario POKEMON</title>
+</head>
+<body>
+<form th:action="@{/insertPokemon}" th:object="${pokemon}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <h3>NOMBRE</h3>
+    <input type="text" th:field="*{nombre}"/>
+
+    <h3>REGION</h3>
+<select th:field="*{region}">
+        <option th:each="region : ${regiones}" th:value="${region.id}" th:text="${region.nombre}"></option>
+    </select>
+
+
+    <input type="submit" value="Enviar"/>
+</form>
+
+</body>
+</html>

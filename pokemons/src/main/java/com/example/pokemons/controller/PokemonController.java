@@ -25,13 +25,19 @@ public class PokemonController {
 
     @RequestMapping("/formPokemon")
     public String formPokemon(Model model){
+
         model.addAttribute("pokemon", new Pokemon());
         model.addAttribute("regiones", regionService.listarTodosRegion());
+        model.addAttribute("mensaje","");
         return "formPokemon";
     }
 
     @RequestMapping("/insertPokemon")
     public String insertarPokemon(@ModelAttribute("pokemon")Pokemon pokemon, BindingResult result, Model model){
+        if(result.hasErrors()){
+            model.addAttribute("mensaje", "Error en la validacion del formulario");
+            return "formPokemon";
+        }
         List<Pokemon> lista = service.insertPokemon(pokemon);
 
         model.addAttribute("pokemons", lista);
