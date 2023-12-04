@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listados de regiones</title>
+</head>
+<body>
+
+<form th:action="@{/searchRegion}" method="post">
+    <h3>Buscar region por nombre</h3>
+    <input type="text" name="search"/>
+    <input type="submit" value="Buscar"/>
+</form>
+
+<h2>REGIONES</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>POKEMONS</th>
+        <th>ACCIONES</th>
+
+    </tr>
+    <tr th:each="reg: ${regiones}">
+        <td th:text="${reg.id}"/>
+        <td th:text="${reg.nombre}"/>
+        <td>
+            <ul th:if="${reg.pokemons != null}">
+                <li th:each="pok : ${reg.pokemons}" th:text="${pok.nombre}"></li>
+            </ul>
+        </td>
+        <td>
+            <form th:action="@{/deleteRegion}" method="post" th:object="${reg}">
+                <input type="hidden" name="newId" th:value="${reg.id}" />
+                <input type="hidden" name="newNombre" th:value="${reg.nombre}" />
+                <button type="submit">Borrar</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

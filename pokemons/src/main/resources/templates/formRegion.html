@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thyneleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario region</title>
+
+</head>
+<body>
+<form th:action="@{/insertRegion}" th:object="${nuevaRegion}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <h3>Nombre</h3>
+    <input type="text" th:field="*{nombre}"/>
+    <br>
+    <input type="submit" value="Enviar"/>
+    <br>
+</form>
+</body>

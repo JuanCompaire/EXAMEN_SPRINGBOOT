@@ -10,19 +10,6 @@
 <a href="/formRegion">Formulario creación region</a>
 <a href="/finRegion">Listado regiones</a>
 
-<h2>REGIONES</h2>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>NOMBRE</th>
-        <th>POKEMONS</th>
-
-    </tr>
-    <tr th:each="reg: ${regiones}">
-        <td th:text="${reg.id}"/>
-        <td th:text="${reg.nombre}"/>
-
-</table>
 
 
 
