@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thyneleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<a href="/formPokemon">Formulario creación pokemon</a>
+<a href="/finPokemon">Listado pokemons</a>
+<a href="/formRegion">Formulario creación region</a>
+<a href="/finRegion">Listado regiones</a>
+
+<h2>REGIONES</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>POKEMONS</th>
+
+    </tr>
+    <tr th:each="reg: ${regiones}">
+        <td th:text="${reg.id}"/>
+        <td th:text="${reg.nombre}"/>
+
+</table>
+
+
+
+</body>
+</html>
