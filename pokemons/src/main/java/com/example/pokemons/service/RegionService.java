@@ -1,5 +1,6 @@
 package com.example.pokemons.service;
 
+import com.example.pokemons.model.Pokemon;
 import com.example.pokemons.model.Region;
 import com.example.pokemons.repository.PokemonRepository;
 import com.example.pokemons.repository.RegionRepository;
@@ -64,4 +65,6 @@ public class RegionService {
         List<Region> lista = regionRepository.findAll();
         return lista;
     }
+
+
 }

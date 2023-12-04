@@ -8,5 +8,24 @@ insert into REGION(nombre) values ('Alola');
 
 
 insert into POKEMON(nombre, region) values ('Bulbasaur', 1);
+insert into POKEMON(nombre, region) values ('Ivysaur', 1);
+insert into POKEMON(nombre, region) values ('Venusaur', 1);
+
+
+insert into POKEMON(nombre, region) values ('Charmander', 2);
+insert into POKEMON(nombre, region) values ('Charmeleon', 2);
+insert into POKEMON(nombre, region) values ('Charizard', 2);
+
+
+insert into POKEMON(nombre, region) values ('Squirtle', 3);
+insert into POKEMON(nombre, region) values ('Wartortle', 3);
+insert into POKEMON(nombre, region) values ('Blastoise', 3);
+
+
+
+
+
+
+
 
 
