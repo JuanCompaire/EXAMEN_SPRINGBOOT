@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario ENTRENADOR</title>
+</head>
+<body>
+<form th:action="@{/insertEntrenador}" th:object="${entrenador}" method="post">
+    <input type="hidden" th:field="*{nombre}" />
+    <h3>NOMBRE</h3>
+    <input type="text" th:field="*{nombre}"/>
+    <h3>ACTIVO</h3>
+    <input type="checkbox" th:field="*{activo}"/>
+    <br/>
+    <input type="submit" value="Enviar"/>
+</form>
+
+</body>
+</html>

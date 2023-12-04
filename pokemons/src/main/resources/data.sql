@@ -21,6 +21,10 @@ insert into POKEMON(nombre, region) values ('Squirtle', 3);
 insert into POKEMON(nombre, region) values ('Wartortle', 3);
 insert into POKEMON(nombre, region) values ('Blastoise', 3);
 
+insert into ENTRENADOR(nombre, activo) values ('Ash', true);
+insert into ENTRENADOR(nombre, activo) values ('Misty', true);
+insert into ENTRENADOR(nombre, activo) values ('Brock', false);
+
 
 
 
