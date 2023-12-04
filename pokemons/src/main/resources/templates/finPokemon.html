@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thyneleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de libros</title>
+</head>
+<body>
+
+
+
+<table border="1px" style="display: table; margin:auto; margin-top:200px; width: 50%;border-collapse: collapse;">
+    <th>ID</th>
+    <th>NOMBRE</th>
+    <th>REGION</th>
+
+    <th colspan="2">Acciones</th>
+    <tbody>
+    <tr th:each="pok: ${pokemons}">
+        <td th:text="${pok.id}"/>
+        <td th:text="${pok.nombre}"/>
+        <td th:text="${pok.region}"/>
+        <td><a th:href="@{'/deletePokemon/'+${pok.id}}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

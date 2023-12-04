@@ -34,10 +34,7 @@ public class PokemonController {
 
     @RequestMapping("/insertPokemon")
     public String insertarPokemon(@ModelAttribute("pokemon")Pokemon pokemon, BindingResult result, Model model){
-        if(result.hasErrors()){
-            model.addAttribute("mensaje", "Error en la validacion del formulario");
-            return "formPokemon";
-        }
+
         List<Pokemon> lista = service.insertPokemon(pokemon);
 
         model.addAttribute("pokemons", lista);

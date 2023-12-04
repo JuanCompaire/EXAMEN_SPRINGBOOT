@@ -16,8 +16,8 @@ public class PokemonRepository {
     JdbcTemplate jdbcTemplate;
 
     public void insert(Pokemon pokemon){
-        jdbcTemplate.update("INSERT INTO POKEMON (id, nombre, region) VALUES (?, ?, ?);",
-                pokemon.getId(), pokemon.getNombre(), pokemon.getRegion());
+        jdbcTemplate.update("INSERT INTO POKEMON ( nombre, region) VALUES ( ?, ?);",
+                pokemon.getNombre(), pokemon.getRegion());
     }
 
     public void update(Pokemon pokemon){
